@@ -1,6 +1,7 @@
 # frontend-code-snippets
 
 
+
 # working with dropdown in js
 
 #### empty a dropdown
@@ -21,7 +22,10 @@ let result = newdata.filter( ({ taluk }) =>taluk === e.params.data.id);
 
 ###### this will conver a set into array and then sort it
 
+```javascript
  [...uniquepin].sort()
+```
+ 
 ###### how to add new option to dropdown
 
 ```javascript

@@ -43,4 +43,9 @@ let result = newdata.filter( ({ taluk }) =>taluk === e.params.data.id);
     });
 ```
 
+##### empty drop down and set a value
 
+```javascript
+$("#id_pincode").val(null).trigger("change");
+ $("#id_pincode").val(result[0].pincode).trigger("change");
+```

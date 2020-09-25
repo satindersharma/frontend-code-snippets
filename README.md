@@ -49,3 +49,8 @@ let result = newdata.filter( ({ taluk }) =>taluk === e.params.data.id);
 $("#id_pincode").val(null).trigger("change");
  $("#id_pincode").val(result[0].pincode).trigger("change");
 ```
+
+### timezoe of user
+```javascript
+# console.log(Intl.DateTimeFormat().resolvedOptions().timeZone)
+```

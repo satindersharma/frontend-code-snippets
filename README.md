@@ -54,3 +54,12 @@ $("#id_pincode").val(null).trigger("change");
 ```javascript
 # console.log(Intl.DateTimeFormat().resolvedOptions().timeZone)
 ```
+
+
+### change the url and reload to that url
+window.location.href = /lead/;
+
+
+### change the url but not reload
+window.history.pushState("", "", "/lead/");
+

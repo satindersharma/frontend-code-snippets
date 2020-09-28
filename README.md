@@ -58,7 +58,7 @@ $("#id_pincode").val(null).trigger("change");
 
 ### change the url and reload to that url
 ```javascript
-window.location.href = /lead/;
+window.location.href = "/lead/";
 ```
 
 ### change the url but not reload

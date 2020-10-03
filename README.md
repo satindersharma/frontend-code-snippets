@@ -65,3 +65,15 @@ window.location.href = "/lead/";
 ```javascript
 window.history.pushState("", "", "/lead/");
 ```
+
+
+
+### get options text and value
+```javascript
+date_filter_id.addEventListener("change",(e)=>{
+ var tragettext = e.target.options[e.target.selectedIndex].text;
+ var evalue = e.target.value;
+ console.log(tragettext)
+  console.log(evalue)
+ });
+ ```

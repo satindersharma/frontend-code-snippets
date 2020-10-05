@@ -19,3 +19,59 @@
       // $(".select2-search__field").focusout();
     }
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$("#id-lead-filter-form").find("#id_statename_filter").val(null).trigger('change');
+
+
+
+
+
+
+    language: {
+      noResults: function () {
+        return "Search for district";
+      },
+    },
+    escapeMarkup: function (markup) {
+      return markup;
+    },
+    
+    
+        language: {
+      errorLoading: function () {
+        return "Search for city";
+      },
+    },
+    
+    
+    
+    
+       width: "resolve",
+    // theme: "classic",
+    // allowClear: true,
+    theme: "bootstrap",
+    
+    
+    

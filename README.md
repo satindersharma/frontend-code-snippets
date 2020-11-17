@@ -86,3 +86,8 @@ date_filter_id.addEventListener("change",(e)=>{
     handle: ".modal-header",
   });
   ```
+  ```css
+  .modal-header {
+  cursor: move;
+}
+```

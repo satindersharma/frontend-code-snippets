@@ -77,3 +77,12 @@ date_filter_id.addEventListener("change",(e)=>{
   console.log(evalue)
  });
  ```
+ 
+ 
+ 
+ ### make modal header draggable
+ ```javascript
+   $("#modal-id-for-followup").draggable({
+    handle: ".modal-header",
+  });
+  ```

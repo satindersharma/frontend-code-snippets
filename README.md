@@ -91,3 +91,24 @@ date_filter_id.addEventListener("change",(e)=>{
   cursor: move;
 }
 ```
+
+
+## Css to show Datatables scrollbar
+```css
+.dataTables_scrollBody::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px var(--dark-theme-top-bg-color);
+  -webkit-box-shadow: inset 0 0 1px var(--dark-theme-top-bg-color);
+  background-color: var(--table-thead-bg-color);
+}
+
+.dataTables_scrollBody::-webkit-scrollbar {
+  width: 2rem;
+  background-color: var(--table-thead-bg-color);
+}
+
+.dataTables_scrollBody::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 2px var(--dark-theme-top-bg-color);
+  -webkit-box-shadow: inset 0 0 2px var(--dark-theme-top-bg-color);
+  background-color: var(--dark-theme-bg-color);
+}
+```

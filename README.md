@@ -112,3 +112,9 @@ date_filter_id.addEventListener("change",(e)=>{
   background-color: var(--dark-theme-bg-color);
 }
 ```
+
+
+
+## If your are getting this error in selecet2
+## Uncaught Error: No select2/compat/inputData
+this means you are assign ing select2 on input but it require a select tag

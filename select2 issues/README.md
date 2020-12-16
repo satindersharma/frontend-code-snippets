@@ -153,6 +153,8 @@ popupCity.select2({
 let popupDistrict = self.$content.find('[name="popup-district"]');
 
 // to close the dialog
+// don't forget to reset z-index before closing
+self.$el.find(".select2-drop, .select2-drop-mask").css("z-index", "");
 self.$closeIcon.trigger("click");
 }
 ```

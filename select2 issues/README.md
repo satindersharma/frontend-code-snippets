@@ -108,3 +108,39 @@ via widget in django form
 widget=forms.TextInput              to
 
 widget=forms.Select
+
+
+
+### select2 won't appear on top
+
+add dropdownParent
+#### inside jquery confirm
+```javascript
+$.dialog{
+....
+onContentReady: function () {
+
+let self = this;
+// console.log("to see all",self)
+// set dropdown parent if you are uing select2 inside the dialog 
+let dropdownParent = self.$el;
+popupCity.select2({
+            tags: true,
+            placeholder: "Select City",
+            width: "resolve",
+            allowClear: true,
+            theme: "bootstrap",
+            dropdownParent: dropdownParent,
+            });
+// find content on jquery confirm
+let popupDistrict = self.$content.find('[name="popup-district"]');
+
+// to close the dialog
+self.$closeIcon.trigger("click");
+}
+```
+
+### select2  appear on top but unable to type on input / unable to focus on input
+
+removing the attribute `tabindex="-1"` from the element.
+

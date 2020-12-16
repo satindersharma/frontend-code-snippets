@@ -126,6 +126,19 @@ onContentReady: function () {
 
 let self = this;
 // console.log("to see all",self)
+// check if it is inside a modal
+if (self.$el.parents(".modal-open:first").length !== 0) {
+  console.log("inside the modal");
+  // thes were the fixes the i don't require
+  // $.fn.modal.Constructor.prototype._enforceFocus = function () {};
+  // $.fn.modal.Constructor.prototype.enforceFocus = function () {};
+
+ // increase z-index if unable to search on select2 input
+  self.$el
+    .find(".select2-container, .select2-drop, .select2-drop-mask")
+    .css("z-index", 999999);
+}
+        
 // set dropdown parent if you are uing select2 inside the dialog 
 let dropdownParent = self.$el;
 popupCity.select2({

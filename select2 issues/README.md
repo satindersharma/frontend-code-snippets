@@ -68,6 +68,7 @@ $("#id-lead-filter-form").find("#id_statename_filter").val(null).trigger('change
    ```
 
 ### The working wheel on select2
+
 ```javascript
   $(".modal").on("wheel", function () {
     if (
@@ -114,7 +115,9 @@ widget=forms.Select
 ### select2 won't appear on top
 
 add dropdownParent
+
 #### inside jquery confirm
+
 ```javascript
 $.dialog{
 ....

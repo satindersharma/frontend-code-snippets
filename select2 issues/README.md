@@ -102,13 +102,14 @@ $("#id-lead-filter-form").find("#id_statename_filter").val(null).trigger('change
 
 ### select2.min.js:1 Uncaught Error: No select2/compat/inputData
 
-change <input > to <select>
+
+change `<input >` to `<select>`
   
 via widget in django form
 
-widget=forms.TextInput              to
+`widget=forms.TextInput    `          to
 
-widget=forms.Select
+`widget=forms.Select`
 
 
 

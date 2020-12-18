@@ -113,6 +113,8 @@ date_filter_id.addEventListener("change",(e)=>{
 }
 ```
 
+### don't forget to add type="button" in the button tag if button is inside a form which have already a button with type="submit" or any button
+### bottom line don't forget to add type of button inside forms
 
 
 ## If your are getting this error in selecet2

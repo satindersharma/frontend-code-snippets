@@ -120,3 +120,213 @@ date_filter_id.addEventListener("change",(e)=>{
 ## If your are getting this error in selecet2
 ## Uncaught Error: No select2/compat/inputData
 this means you are assign ing select2 on input but it require a select tag
+
+
+
+
+# How to write javascript direclty into firefox or
+# run or edit javascript in browser
+
+###### (go to your browser console (ctrl + shift + i or f12) and go to console tab) or ctrl + shift + k
+######  (click on swith to multi-line editor mode) or (ctrl + b  note:-if you are not in web developer toolbar this will trigger bookmarks)
+######  wrap you function inside
+
+```javascript
+(function() {
+})();
+```
+`note: ` remove 
+```javascript
+window.addEventListener("load", () => {});
+```
+
+###### add off() to you events as they will attach agian and agian when you run the script
+###### (to run script click on run) or (ctrl + enter)
+
+###### example
+
+```javascript
+// (go to your browser console (ctrl + shift + i or f12) and go to console tab) or ctrl + shift + k
+// (click on swith to multi-line editor mode) or (ctrl + b  note:-if you are not in web developer toolbar this will trigger bookmarks)
+// wrap you function inside
+/* ----
+(function() {
+})();
+note: remove window.addEventListener("load", () => {});
+
+--- */
+// add off() to you events as they will attach agian and agian when you run the script
+// (to run script click on run) or (ctrl + enter)
+
+
+// eg.
+
+
+
+(function () {
+  //
+
+  let bom_form = $("#add-bom-form");
+  bom_form.submit(function (e) {
+    // e.preventDefault();
+    $(".item-formset-div").first().remove();
+    return true;
+  });
+
+  // let bom_form = $("#add-bom-form");
+  // bom_form.submit(function (e) {
+  //   e.preventDefault();
+  //   $(".item-formset-div").first().remove();
+  //   let serializedData = new FormData(this);
+  //   console.log(window.snapshot_array);
+  //   let item_name = serializedData.get("bom-name");
+  //   $.each(window.snapshot_array, function (k, v) {
+  //     let file = v[0];
+  //     let filename = item_name + v[1];
+  //     console.table(file, filename);
+  //     serializedData.append("bom-image", file, filename);
+  //   });
+  //   console.log(serializedData.getAll("bom-image"));
+  //   $.ajax({
+  //     type: bom_form.attr("method"),
+  //     url: bom_form.attr("action"),
+  //     data: serializedData,
+  //     cache: false,
+  //     contentType: false,
+  //     processData: false,
+  //     success: function (data) {
+  //       $.confirm({
+  //         title: "Success!",
+  //         content: data.content,
+  //         theme: "modern",
+  //         autoClose: "ok|1000",
+  //         escapeKey: true,
+  //         draggable: true,
+  //         onClose: function () {
+  //           bom_form_reset();
+  //           $("#bom-add-modal").modal("hide");
+  //           return true;
+  //         },
+  //         backgroundDismiss: function () {
+  //           bom_form_reset();
+  //           $("#bom-add-modal").modal("hide");
+  //           return true;
+  //         },
+  //         buttons: {
+  //           ok: function () {
+  //             bom_form_reset();
+  //             $("#bom-add-modal").modal("hide");
+  //           },
+  //         },
+  //       });
+  //     },
+  //   });
+  // });
+  
+
+  /* ---- Add button function ---*/
+  // $(".add-remove .add-bom-item-btn").on('click',function(e){
+  //   e.preventDefault()
+  //   let self = $(this)
+  //   console.log(self.closest('.add-remove'))
+  // })
+
+  function changeNewCopy(newCopy, formset_div, item_val, clickCoutner) {
+    let self = $(newCopy);
+    let cloneDiv = self.closest(formset_div).clone();
+    $(cloneDiv).find("#id_bom-item-0-item").val(item_val).trigger("change");
+
+    cloneDiv
+      .find('label[for="id_bom-item-0-item"]')
+      .attr("for", `id_bom-item-${clickCoutner}-item`);
+    cloneDiv.find("#id_bom-item-0-item").attr({
+      id: `id_bom-item-${clickCoutner}-item`,
+      name: `bom-item-${clickCoutner}-item`,
+      required: true,
+    });
+    cloneDiv
+      .find('label[for="id_bom-item-0-item_reference"]')
+      .attr("for", `id_bom-item-${clickCoutner}-item_reference`);
+    cloneDiv.find("#id_bom-item-0-item_reference").attr({
+      id: `id_bom-item-${clickCoutner}-item_reference`,
+      name: `bom-item-${clickCoutner}-item_reference`,
+      required: true,
+    });
+    // change text add to remove
+    let btnDiv = $(cloneDiv).find(".add-bom-item-btn").closest(".form-group");
+    $(btnDiv)
+      .find(".add-bom-item-btn-text")
+      .removeClass("add-bom-item-btn-text")
+      .addClass("remove-bom-item-btn-text")
+      .text("Remove");
+    // change icon add remove
+    let removeBtn = $(btnDiv)
+      .find(".add-bom-item-btn")
+      .removeClass("add-bom-item-btn ri-add-circle-line")
+      .addClass("remove-bom-item-btn ri-close-circle-line");
+
+    $(removeBtn).off().on("click", function () {
+      $(this).closest(".item-formset-div").remove();
+
+      // $(".item-formset-div").each(function (k, v) {});
+      // decrease total form no by one (as div not upaded here thus minus 1)
+      $("#id_bom-item-TOTAL_FORMS").val($(".item-formset-div").length - 1);
+    });
+    // increase when a new added
+    $("#id_bom-item-TOTAL_FORMS").val($(".item-formset-div").length);
+    return cloneDiv;
+  }
+  var clickCoutner = 0;
+  $(".add-bom-item-btn").off().on("click", function (e) {
+    e.preventDefault();
+    let formset_div = ".item-formset-div";
+    let item_val = $(formset_div)
+      .first()
+      .find("#id_bom-item-0-item option:selected")
+      .val();
+    let item_reference = $(formset_div)
+      .first()
+      .find("#id_bom-item-0-item_reference")
+      .val();
+    if (item_val && item_reference) {
+      clickCoutner += 1;
+      console.log(item_val);
+      let self = $(this);
+      let formset_div = ".item-formset-div";
+      let new_copy = changeNewCopy(self, formset_div, item_val, clickCoutner);
+
+      $(formset_div).first().find("#id_bom-item-0-item_reference").val("");
+      // new_copy = new_copy.remove(self.closest('.form-group'))
+      // let fdiv =
+      $(formset_div).first().next().after(new_copy);
+    } else {
+      // console.log('error')
+      $.alert({
+        title: "Alert!",
+        content: "Both Fields are Required",
+        // icon: "ri-error-warning-fill text-dark",
+        theme: "modern",
+        autoClose: "ok|1000",
+        escapseKey: true,
+        draggable: true,
+        onClose: function () {
+          return true;
+        },
+        backgroundDismiss: function () {
+          return true;
+        },
+        buttons: {
+          ok: function () {
+            return true;
+          },
+        },
+      });
+    }
+  });
+  // $(`<div class="line-divider-darker"></div>`).insertAfter(
+  //   $(".item-formset-div").first()
+  // );
+  // $("#id_bom-item-0-item").attr('required',true)
+  // $("#id_bom-item-0-item_reference").attr('required',true)
+})();
+```

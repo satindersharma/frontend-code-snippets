@@ -140,7 +140,7 @@ this means you are assign ing select2 on input but it require a select tag
 window.addEventListener("load", () => {});
 ```
 
-###### add off() to you events as they will attach agian and agian when you run the script
+###### add off() to your events(jquery events) as they will attach agian and agian when you run the script
 ###### (to run script click on run) or (ctrl + enter)
 
 ###### example
@@ -155,7 +155,7 @@ window.addEventListener("load", () => {});
 note: remove window.addEventListener("load", () => {});
 
 --- */
-// add off() to you events as they will attach agian and agian when you run the script
+// add off() toyour events(jquery events) as they will attach agian and agian when you run the script
 // (to run script click on run) or (ctrl + enter)
 
 

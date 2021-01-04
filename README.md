@@ -330,3 +330,24 @@ note: remove window.addEventListener("load", () => {});
   // $("#id_bom-item-0-item_reference").attr('required',true)
 })();
 ```
+
+
+
+
+
+# Custom form control bootsrap
+
+if you are adding col-form-label it will add extra top padding so to make checkbox input and label align add pt-0 to the label
+format should be 
+.form-row>.form-group.col-md-4>.col-sm-6.ml-3.custom-control.custom-checkbox>input:checkbox.custom-control-input+label.col-form-label.pt-0.custom-control-label^.col-sm-12>input
+
+```html
+ <div class="form-row">
+     <div class="form-group col-md-4">
+         <div class="col-sm-6 ml-3 my-auto custom-control custom-checkbox">
+             <input type="checkbox" name="" id="id_is_serial_checkbox" class="custom-control-input">
+             <label for="id_is_serial_checkbox" class="col-form-label pt-0 custom-control-label">Is Serial</label></div>
+         <div class="col-sm-12"><input id="id_is_serial" class="form-control" type="text"></div>
+     </div>
+ </div>
+```

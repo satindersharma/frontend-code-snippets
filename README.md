@@ -337,9 +337,12 @@ note: remove window.addEventListener("load", () => {});
 
 # Custom form control bootsrap
 
+
 if you are adding col-form-label it will add extra top padding so to make checkbox input and label align add pt-0 to the label
 format should be 
-.form-row>.form-group.col-md-4>.col-sm-6.ml-3.custom-control.custom-checkbox>input:checkbox.custom-control-input+label.col-form-label.pt-0.custom-control-label^.col-sm-12>input
+
+
+`.form-row>.form-group.col-md-4>.col-sm-6.ml-3.custom-control.custom-checkbox>input:checkbox.custom-control-input+label.col-form-label.pt-0.custom-control-label^.col-sm-12>input`
 
 ```html
  <div class="form-row">

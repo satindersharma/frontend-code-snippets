@@ -360,7 +360,13 @@ format should be
 
 # Site Loading animation
 
-in your html head
+
+##### TO show loading animation until site loads
+
+
+##### add these lines  in your html head
+
+
 
 ```html
 <!DOCTYPE html>

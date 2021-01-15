@@ -364,7 +364,7 @@ format should be
 ##### TO show loading animation until site loads
 
 
-##### add these lines  in your html head
+##### add these lines  in your html head and body
 
 
 
